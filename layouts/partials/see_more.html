@@ -1,0 +1,24 @@
+{{ if isset .Site.Params "see_more" }}
+{{ if .Site.Params.see_more.enable }}
+<section class="bar background-image-fixed-2 no-mb color-white text-center">
+    <div class="dark-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="text-uppercase">Interested?</h3>
+                <p class="lead">Register to watch 3 free video's </p>
+                <a href="/register" class="btn btn-template-transparent-black btn-lg">Register</a>
+            </div>
+            <div class="col-sm-6">
+                <p>
+                    <h3 class="text-uppercase">Browse events</h3>
+                    <p class="lead">Check out 100+ speakers </p>
+                    <a href="/events" class="btn btn-template-transparent-black btn-lg">Events</a>
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}
