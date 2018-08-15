@@ -1,6 +1,6 @@
 ---
-id: 3
-title: "John Perkins"
+id: 5
+title: "Corey Goode"
 image: "img/john_perkins.jpg"
 type: "Keynote"
 about: "John Perkins learned the powers of perceived reality to change objective reality from Amazon shamans in 1968-71, honed them as an economic hit man, and has since used them to help individuals, corporations, and governments create a better world. His books, in 33 languages, spent 73 weeks on the NYT bestseller list. John is a founder and board member of Dream Change and The Pachamama Alliance, non-profit organizations devoted to establishing a world future generations will want to inherit."

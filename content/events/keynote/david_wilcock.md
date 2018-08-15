@@ -1,4 +1,5 @@
 ---
+id: 2
 title: "David Wilcock"
 image: "img/david_wilcock.jpg"
 type: "Keynote"

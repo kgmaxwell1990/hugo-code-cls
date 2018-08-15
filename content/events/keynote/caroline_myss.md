@@ -1,4 +1,5 @@
 ---
+id: 1
 title: "Caroline Myss"
 image: "img/caroline_myss.jpg"
 type: "Keynote"
