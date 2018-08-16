@@ -1,7 +1,8 @@
 +++
 title = "buy"
 description = "buy tickets"
-keywords = ["buy","How do I","questions","what if"]
+type = "page"
+layout = "buy"
 +++
 
 Buy Tickets

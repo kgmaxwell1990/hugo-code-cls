@@ -1,17 +1,42 @@
 {{ define "main" }}
 
+{{ range .Site.Pages}}
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal{{.Params.Id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title" id="exampleModalLabel">{{.Params.Title}}</h1>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <p>{{.Params.About}}</p>
+                <p><strong>{{.Params.Name_event}}</strong></p>
+                <p>{{.Params.Date_event}} <br> {{.Params.Time_event}}</p>
+                <p>{{ .Params.About_event}}</p>
+                <p> Ticket needed: Individual Speaker/Premium Pass<br><a class="btn btn-default" href="/buy">Tickets</a></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+{{end}}
 
 
 
         <!-- {{ partial "breadcrumbs.html" . }} -->
 <div class="container events_container">
-        <div class="row">
+        <div class="row speaker_block">
                 <div class="heading text-center">
                         <h2>Keynote Speakers</h2>
                     </div>
                 
-                {{ $.Scratch.Set "count" 0 }}
 
+                {{ $.Scratch.Set "count" 0 }}
                 {{ range where .Site.Pages "Params.type" "Keynote" }}
                 {{ $.Scratch.Add "count" 1 }}
                 {{ if modBool ($.Scratch.Get "count") 5 }}
@@ -28,10 +53,13 @@
 
                            <div class="collapse multi-collapse" id="multiCollapseExample{{ .Params.Id}}">
                                 <div class="card-body">
-                                  <p>{{.Params.About | truncate 140}}</p>
+                                  <p>{{.Params.About | truncate 160}}</p>
                                   <p><strong>{{.Params.Name_event}}</strong></p>
-                                  <p>{{.Params.Date_event}} - {{.Params.Time_event}}</p>
-                                  <a href="{{.URL}}">More</a>
+                                  <p>{{.Params.Date_event}} <br> {{.Params.Time_event}}</p>
+                                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal{{ .Params.Id}}">
+                                        More Info
+                                  </button>
+                                  <p> Ticket needed: Individual Speaker/Premium Pass<br><a class="btn btn-default" href="/buy">Tickets</a></p>
                                 </div>
                               </div>
                    </div>  
@@ -40,47 +68,79 @@
                </div>
               
            
-               <div class="row">
-                    <div class="heading text-center">
-                            <h2>Panels</h2>
-                        </div>
+        <div class="row speaker_block">
+                <div class="heading text-center">
+                        <h2>Panel Discussions</h2>
+                    </div>
+                
+
+                {{ $.Scratch.Set "count_p" 0 }}
                 {{ range where .Site.Pages "Params.type" "Panel" }}
-                <div class="col-sm-2">
+                {{ $.Scratch.Add "count_p" 1 }}
+                {{ if modBool ($.Scratch.Get "count_p") 5 }}
+                </div><div class="row">
+                {{end}}
+                     <div class="col-sm-3">
            
-                           <div class="card">
-                                   <a href="{{.URL}}">
-                   
-                                   <img src="{{ .Site.BaseURL}}{{ .Params.Image }}" alt="{{.Params.Title}}" width="100%">
-                   
-                                   <div class="container card_title">
-                                   <h4>{{ .Title }}</h4> 
-                                   </div>
-                                   </a>
-                           </div>  
-                             </div>
+                   <div class="card" style="background: url('{{ .Site.BaseURL}}{{ .Params.Image }}') no-repeat; background-size:cover;">
+           
+                           <div class="card_title">
+                           <h4>{{ .Title }} <a class="btn" data-toggle="collapse" href="#multiCollapseExample{{ .Params.Id}}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="fas fa-info-circle fa-2x"></i></a></h4> 
+                           
+                           </div>
+
+                           <div class="collapse multi-collapse" id="multiCollapseExample{{ .Params.Id}}">
+                                <div class="card-body">
+                                  <p>{{.Params.About | truncate 160}}</p>
+                                  <p><strong>{{.Params.Name_event}}</strong></p>
+                                  <p>{{.Params.Date_event}} <br> {{.Params.Time_event}}</p>
+                                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal{{ .Params.Id}}">
+                                        More Info
+                                  </button>
+                                  <p> Ticket needed: Individual Speaker/Premium Pass<br><a class="btn btn-default"  href="/buy">Tickets</a></p>
+                                </div>
+                              </div>
+                   </div>  
+                     </div>
                 {{ end }}
                </div>
            
-                <div class="row">
-                        <div class="heading text-center">
-                                <h2>Workshops</h2>
-                            </div>
-                {{ range where .Site.Pages "Params.type" "Workshop" }}
-                <div class="col-sm-2">
-           
-                           <div class="card">
-                                   <a href="{{.URL}}">
-                   
-                                   <img src="{{ .Site.BaseURL}}{{ .Params.Image }}" alt="{{.Params.Title}}" width="100%">
-                   
-                                   <div class="container card_title">
-                                   <h4>{{ .Title }}</h4> 
-                                   </div>
-                                   </a>
-                           </div>  
-                             </div>
-                {{ end }}
-               </div>
+               <div class="row speaker_block">
+                    <div class="heading text-center">
+                            <h2>Workshops</h2>
+                        </div>
+                    
+    
+                    {{ $.Scratch.Set "count__w" 0 }}
+                    {{ range where .Site.Pages "Params.type" "Workshop" }}
+                    {{ $.Scratch.Add "count_w" 1 }}
+                    {{ if modBool ($.Scratch.Get "count_w") 5 }}
+                    </div><div class="row">
+                    {{end}}
+                         <div class="col-sm-3">
+               
+                       <div class="card" style="background: url('{{ .Site.BaseURL}}{{ .Params.Image }}') no-repeat; background-size:cover;">
+               
+                               <div class="card_title">
+                               <h4>{{ .Title }} <a class="btn" data-toggle="collapse" href="#multiCollapseExample{{ .Params.Id}}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="fas fa-info-circle fa-2x"></i></a></h4> 
+                               
+                               </div>
+    
+                               <div class="collapse multi-collapse" id="multiCollapseExample{{ .Params.Id}}">
+                                    <div class="card-body">
+                                      <p>{{.Params.About | truncate 160}}</p>
+                                      <p><strong>{{.Params.Name_event}}</strong></p>
+                                      <p>{{.Params.Date_event}} <br> {{.Params.Time_event}}</p>
+                                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal{{ .Params.Id}}">
+                                            More Info
+                                      </button>
+                                      <p> Ticket needed: Individual Speaker/Premium Pass<br><a class="btn btn-default"  href="/buy">Tickets</a></p>
+                                    </div>
+                                  </div>
+                       </div>  
+                         </div>
+                    {{ end }}
+                   </div>
 
             </div>
 

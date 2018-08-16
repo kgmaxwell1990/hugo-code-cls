@@ -1,5 +1,5 @@
 ---
-id: 3
+id: "jp"
 title: "John Perkins"
 image: "img/john_perkins.jpg"
 type: "Keynote"

@@ -1,13 +1,13 @@
 ---
+id: "vg"
 title: "Vickie Gay"
 image: "img/vickie_gay.jpg"
 type: "Workshop"
-about: "John Perkins learned the powers of perceived reality to change objective reality from Amazon shamans in 1968-71, honed them as an economic hit man, and has since used them to help individuals, corporations, and governments create a better world. His books, in 33 languages, spent 73 weeks on the NYT bestseller list. John is a founder and board member of Dream Change and The Pachamama Alliance, non-profit organizations devoted to establishing a world future generations will want to inherit."
-name_event: "Touching the Jaguar"
-date_event: "February 2nd 2019"
-time_event: "14:00"
-summary_event: "Changing Reality by Changing Perception. 
-When aliens arrive, how will they deal with our planet and us?"
-about_event: "They’ll certainly be impressed by Earth’s beauty and abundant resources, and dismayed by the destructive actions of its people. They’ll be shocked by the brutal ways we treat each other and our planetary home. They may well decide that if we continue to kill and destroy, they’ll have no choice but to save the planet by eradicating us."
+about: "CERTIFICATES & AWARDS: 6th National & International election/vote United States and World’s lightworkers 2016-2017. Of 17,000 entries from 83 countries. Public’s choice and word of mouth from around the globe Vickie Gay RANKS: World’s Best and America’s #1 Psychic, Medium, Paranormal Researcher Investigator. CERTIFIED Psychic Medium by AFCP Inc., NY.  AUTHOR of various books."
+name_event: "Supernatural: Psychic, Mediumship, Psychometry, Empath"
+date_event: "Saturday, February 10 2019"
+time_event: "6:00 pm - 7:30pm PST"
+summary_event: ""
+about_event: "Work on an infrastructure using psychic, mediumship, healing energy, psychometry, empathic powers and the Akashic Records.  Work on how to set an intention with authority through the power of almighty divinity. Work with supernatural beings, learn how to send out prayers that are heard and get results.   Enjoy a guided meditation with a history of 90% of the participants making a connection themselves. Short readings to demonstrate the result of combining powers, and an unforgettable experience being in the presents of almighty beings assisting Vickie Gay. Sharpen your gifted skills, learn new techniques, and/or discover your spiritual powers. Everyone is invited."
 draft: false
 ---

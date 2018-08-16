@@ -1,14 +1,13 @@
 ---
-id: 5
+id: "cg"
 title: "Corey Goode"
-image: "img/john_perkins.jpg"
+image: "img/corey_goode.jpg"
 type: "Keynote"
-about: "John Perkins learned the powers of perceived reality to change objective reality from Amazon shamans in 1968-71, honed them as an economic hit man, and has since used them to help individuals, corporations, and governments create a better world. His books, in 33 languages, spent 73 weeks on the NYT bestseller list. John is a founder and board member of Dream Change and The Pachamama Alliance, non-profit organizations devoted to establishing a world future generations will want to inherit."
-name_event: "Touching the Jaguar"
-date_event: "February 2nd 2019"
-time_event: "14:00"
-summary_event: "Changing Reality by Changing Perception. 
-When aliens arrive, how will they deal with our planet and us?"
-about_event: "They’ll certainly be impressed by Earth’s beauty and abundant resources, and dismayed by the destructive actions of its people. They’ll be shocked by the brutal ways we treat each other and our planetary home. They may well decide that if we continue to kill and destroy, they’ll have no choice but to save the planet by eradicating us."
+about: "Corey Goode identified as an intuitive empath (IE), Goode was recruited, trained and served in MILAB Programs from the ages of 6 to 16 years of age and then 20 years in various programs. Goode’s IE abilities were crucial in interfacing with Non-Terrestrial Beings While in the Secret Space Programs. Goode had a variety of assignments including assignment to an ASSR “ISRV” – Auxiliary Specialized Space Research, Interstellar Class Vessel, and much more. Corey Goode is a co-host with David Wilcock on Gaia TV’s “Cosmic Disclosure”."
+name_event: "Ascending DNA & the Solar Consciousness"
+date_event: "Sunday, February 11th 2019"
+time_event: "4:00 pm - 5:30 pm PST"
+summary_event: ""
+about_event: "The “Solar Sneeze” as termed within the SSP has spawned many different theories and belief systems. No one knows with certainty just what will occur during a CME (Mass Coronal Ejection), “Kill Shot” or EMP (Electro Magnetic Pulse). Scientific predictions include everything from 3 days of Darkness, to a Mass Extinction Event, Rapid DNA Upgrades and the Transition of Densities; while also many spiritual and religious texts have predicted the Rapture, “Golden Age” or Kali Yuga, Harvest, Spiritual Ascension and the Apocalypse. With the heightened Geo Political climate coupled with the intensification of natural disasters and earth changes, Gaia (Earth) is going through the transitional birthing pains of Ascension along with everything and everyone upon it. Corey will recount in detail what has been shown to him during his contact experiences with the Blue Avians (5th Density ET’s) regarding the Solar Sneeze and Ascension. He will also talk about the preparations the Anshar (4th Density Human Beings) are taking now in anticipation of the coming solar event and what role humanity plays in preserving their timeline."
 draft: false
 ---
