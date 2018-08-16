@@ -27,10 +27,52 @@
               </div>
               <div class="row modal_row">
                   <div class="col-sm-2">
-                    <h5>Tickets</h5>
+                    <h5>Tickets</h5><br>
+                    <a href="/buy">See All Tickets</a>
                   </div>
                   <div class="col-sm-10 border-left">
-                      To stream this event you need one of the following tickets:<br><a class="btn btn-default" href="/buy">Tickets</a>
+                      To stream this event you need one of the following tickets:<br>
+                      <div class="row">
+                      {{ range .Params.tags}}
+
+                      {{ if eq . "ind_key"}}
+                        <div class="col-sm-3 centered_div">
+                          <div class="ticket_small">
+                            <a href="https://ey283.infusionsoft.com/app/storeFront/showCategoryPage?categoryId=101" target="_blank">
+                        <h6>Individual Keynote Ticket for Speaker</h6>
+                        <p> from $45 </p>
+                        </a>
+                        </div>
+                        </div>
+    
+                      {{ else if eq . "prem"}}
+                      <div class="col-sm-3 centered_div">
+                          <div class="ticket_small">
+                            <a href="https://ey283.infusionsoft.app/app/storeFront/showProductDetail?productId=427" target="_blank">
+                        <h6>Premium Pass</h6>
+                        <p> $122 </p>
+                        </a>
+                        </div>
+                        </div>
+                    
+
+                    {{ else if eq . "prem_plus_dw"}}
+                    <div class="col-sm-3 centered_div">
+                        <div class="ticket_small">
+                          <a href="https://ey283.infusionsoft.app/app/storeFront/showProductDetail?productId=431" target="_blank">
+                      <h6>Premium Pass + David Wilcock Trilogy Pass</h6>
+                      <p> $267 </p>
+                      </a>
+                      </div>
+                      </div>
+                      </div>
+                      {{end}}
+                      
+                      {{end}}
+
+                    </div>
+                    </div>
+                      <!-- <a class="btn btn-default" href="/buy">Tickets</a> -->
                   </div>
               </div>
             </div>

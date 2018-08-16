@@ -1,2 +1,4 @@
 text: "Premium Pass"
-price: 122
+price: "$122"
+url: "https://ey283.infusionsoft.app/app/storeFront/showProductDetail?productId=427"
+weight: 5

@@ -1,5 +1,5 @@
 ---
-id: "jp"
+id: "jp_k"
 title: "John Perkins"
 image: "img/john_perkins.jpg"
 type: "Keynote"
@@ -10,5 +10,6 @@ time_event: "14:00"
 summary_event: "Changing Reality by Changing Perception. 
 When aliens arrive, how will they deal with our planet and us?"
 about_event: "They’ll certainly be impressed by Earth’s beauty and abundant resources, and dismayed by the destructive actions of its people. They’ll be shocked by the brutal ways we treat each other and our planetary home. They may well decide that if we continue to kill and destroy, they’ll have no choice but to save the planet by eradicating us."
+tags: ['ind_key', 'prem', 'prem_plus_dw']
 draft: false
 ---
