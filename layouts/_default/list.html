@@ -2,24 +2,40 @@
 
 {{ range .Site.Pages}}
       <!-- Modal -->
-      <div class="modal fade" id="exampleModal{{.Params.Id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+      <div class="modal fade" id="event{{.Params.Id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title" id="exampleModalLabel">{{.Params.Title}}</h1>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+              <h2 class="modal-title header">{{.Params.Title}}</h2>
             </div>
             <div class="modal-body">
-                <p>{{.Params.About}}</p>
-                <p><strong>{{.Params.Name_event}}</strong></p>
-                <p>{{.Params.Date_event}} <br> {{.Params.Time_event}}</p>
-                <p>{{ .Params.About_event}}</p>
-                <p> Ticket needed: Individual Speaker/Premium Pass<br><a class="btn btn-default" href="/buy">Tickets</a></p>
+              <div class="row modal_row">
+                <div class="col-sm-2">
+                  <h5>About</h5>
+                </div>
+                <div class="col-sm-10 border-left">{{.Params.About}}</div>
+              </div>
+              <div class="row modal_row">
+                  <div class="col-sm-2">
+                    <h5>View</h5>
+                  </div>
+                  <div class="col-sm-10 border-left">
+                      <h5><strong>{{.Params.Name_event}}</strong><br>{{.Params.Date_event}} - {{.Params.Time_event}}</h5>
+         
+                      {{ .Params.About_event}}
+                  </div>
+              </div>
+              <div class="row modal_row">
+                  <div class="col-sm-2">
+                    <h5>Tickets</h5>
+                  </div>
+                  <div class="col-sm-10 border-left">
+                      To stream this event you need one of the following tickets:<br><a class="btn btn-default" href="/buy">Tickets</a>
+                  </div>
+              </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -28,7 +44,6 @@
 
 
 
-        <!-- {{ partial "breadcrumbs.html" . }} -->
 <div class="container events_container">
         <div class="row speaker_block">
                 <div class="heading text-center">
@@ -56,10 +71,9 @@
                                   <p>{{.Params.About | truncate 160}}</p>
                                   <p><strong>{{.Params.Name_event}}</strong></p>
                                   <p>{{.Params.Date_event}} <br> {{.Params.Time_event}}</p>
-                                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal{{ .Params.Id}}">
-                                        More Info
+                                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#event{{ .Params.Id}}">
+                                        <h6>More Info &amp; Tickets</h6>
                                   </button>
-                                  <p> Ticket needed: Individual Speaker/Premium Pass<br><a class="btn btn-default" href="/buy">Tickets</a></p>
                                 </div>
                               </div>
                    </div>  
@@ -143,9 +157,5 @@
                    </div>
 
             </div>
-
-
-
-
 
 {{end}}
