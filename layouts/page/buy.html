@@ -1,14 +1,9 @@
 {{ define "main" }}
-
-
-<div class="row">
-<div class="col-sm-8 col-sm-offset-2">
+<div class="container centered_div">
         <div class="heading text-center">
-            <h2>VIEW ALL LIVE STREAMED EVENTS AS VIDEO ON DEMAND</h2>
+            <h2>View all live streamed events as video on demand</h2>
         </div>
-    
         <p class="lead text-center">Opening Ceremony and Keynote with Barbara Marx Hubbard Streaming <a href="">FREE</a></p>
-    </div>
 </div>
 
 
@@ -24,14 +19,21 @@
                         <div class="row">
                             {{ range sort (.Site.Data.tickets ) "weight" "asc"}}
                             <div class="col-sm-4">
+                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                                     <a href="{{ .url }}" target="_blank">
-                                <div class="tickets_large">
-                                  
-        
-                                <h4>{{ .text | markdownify }} </h4><br>
-                                <h4>{{ .price | markdownify }}</h4>
-                                </div>
-                            </a>
+                                    <div class="flipper">
+                                      <div class="front">
+                                            <h4>{{ .text | markdownify }} </h4><br>
+                                            <h4>{{ .price | markdownify }}</h4>
+                                      </div>
+                                      <div class="back">
+                                            <p>{{ .text | markdownify }} </p>
+                                            <p>{{ .info |markdownify}}</p>
+                                      </div>
+                                    </div>
+                                </a>
+                                  </div>
+                            
                             </div>
                        
                             {{ end }}

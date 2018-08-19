@@ -1,203 +1,228 @@
-{{ define "main" }}
-
-{{ range .Site.Pages}}
-      <!-- Modal -->
-      <div class="modal fade" id="event{{.Params.Id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-          <div class="modal-content">
+{{ define "main" }} {{ range .Site.Pages}}
+<!-- Modal -->
+<div class="modal fade" id="event{{.Params.Id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
             <div class="modal-header">
-              <h2 class="modal-title header">{{.Params.Title}}</h2>
+                <h2 class="modal-title header">{{.Params.Title}}</h2>
             </div>
             <div class="modal-body">
-              <div class="row modal_row">
-                <div class="col-sm-2">
-                  <h5>About</h5>
+                <div class="row modal_row">
+                    <div class="col-sm-2">
+                        <h4>About</h4>
+                    </div>
+                    <div class="col-sm-10 border-left">{{.Params.About}}</div>
                 </div>
-                <div class="col-sm-10 border-left">{{.Params.About}}</div>
-              </div>
-              <div class="row modal_row">
-                  <div class="col-sm-2">
-                    <h5>View</h5>
-                  </div>
-                  <div class="col-sm-10 border-left">
-                      <h5><strong>{{.Params.Name_event}}</strong><br>{{.Params.Date_event}} - {{.Params.Time_event}}</h5>
-         
-                      {{ .Params.About_event}}
-                  </div>
-              </div>
-              <div class="row modal_row">
-                  <div class="col-sm-2">
-                    <h5>Tickets</h5><br>
-                    <a href="/buy">All Tickets</a>
-                  </div>
-                  <div class="col-sm-10 border-left">
-                      To stream this event you need one of the following tickets:<br>
-                      <div class="row">
-                      {{ range .Params.tags}}
+                <div class="row modal_row">
+                    <div class="col-sm-2">
+                        <h4>View</h4>
+                    </div>
+                    <div class="col-sm-10 border-left">
+                        <h5><strong>{{.Params.Type_event}}</strong> - {{.Params.Name_event}}<br>{{.Params.Date_event}} - {{.Params.Time_event}}</h5>
 
-                      {{ if eq . "ind_key"}}
-                        <div class="col-sm-3 centered_div">
-                          <div class="ticket_small">
-                            <a href="https://ey283.infusionsoft.com/app/storeFront/showCategoryPage?categoryId=101" target="_blank">
-                        <h6>Individual Keynote Ticket for Speaker</h6>
-                        <p> from $45 </p>
-                        </a>
-                        </div>
-                        </div>
-    
-                      {{ else if eq . "prem"}}
-                      <div class="col-sm-3 centered_div">
-                          <div class="ticket_small">
-                            <a href="https://ey283.infusionsoft.app/app/storeFront/showProductDetail?productId=427" target="_blank">
-                        <h6>Premium Pass</h6>
-                        <p> $122 </p>
-                        </a>
-                        </div>
-                        </div>
-                    
+                        <p>{{ .Params.About_event}}</p>
 
-                    {{ else if eq . "prem_plus_dw"}}
-                    <div class="col-sm-3 centered_div">
-                        <div class="ticket_small">
-                          <a href="https://ey283.infusionsoft.app/app/storeFront/showProductDetail?productId=431" target="_blank">
-                      <h6>Premium Pass + David Wilcock Trilogy Pass</h6>
-                      <p> $267 </p>
-                      </a>
-                      </div>
-                      </div>
-                      </div>
-                      {{end}}
-                      
-                      {{end}}
+                        {{ if .Params.Type_event2}}
+                        <h5><strong>{{.Params.Type_event2}}</strong> - {{.Params.Name_event2}}<br>{{.Params.Date_event2}} - {{.Params.Time_event2}}</h5>
+
+                        <p>{{ .Params.About_event2}}</p>
+                        {{ end }}
+                    </div>
+                </div>
+                <div class="row modal_row">
+                    <div class="col-sm-2">
+                        <h4>Tickets (See <a href="/buy">All Tickets</a>)</h4><br>
 
                     </div>
+                    <div class="col-sm-10 border-left">
+                        To view {{.Params.Title}} you need one of the following tickets:<br>
+                        <div class="row">
+                            {{ range .Params.tags}} {{ if eq . "ind_key"}}
+                            <div class="col-sm-3">
+                                <div class="ticket_small">
+                                    <a href="https://ey283.infusionsoft.com/app/storeFront/showCategoryPage?categoryId=455" target="_blank">
+                                        <h6>Individual Keynote Ticket For Speaker</h6>
+                                        <p> from $45 </p>
+                                    </a>
+                                </div>
+                            </div>
+                            {{ else if eq . "post_con"}}
+                            <div class="col-sm-3">
+                                <div class="ticket_small">
+                                    <a href="https://ey283.infusionsoft.app/app/storeFront/showCategoryPage?categoryId=107" target="_blank">
+                                        <h6>Post Conference Ticket For Speaker</h6>
+                                        <p> from $75 </p>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                            {{ else if eq . "prem"}}
+                            <div class="col-sm-3">
+                                <div class="ticket_small">
+                                    <a href="https://ey283.infusionsoft.app/app/storeFront/showProductDetail?productId=427" target="_blank">
+                                        <h6>Premium Pass</h6>
+                                        <p> $122 </p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            {{ else if eq . "prem_plus_dw"}}
+                            <div class="col-sm-3">
+                                <div class="ticket_small">
+                                    <a href="https://ey283.infusionsoft.app/app/storeFront/showProductDetail?productId=431" target="_blank">
+                                        <h6>Premium Pass + David Wilcock Trilogy Pass</h6>
+                                        <p> $267 </p>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                            {{ else if eq . "workshop"}}
+                            <div class="col-sm-3">
+                                <div class="ticket_small">
+                                    <a href="https://ey283.infusionsoft.app/app/storeFront/showCategoryPage?categoryId=103" target="_blank">
+                                        <h6>Individual Workshop Ticket</h6>
+                                        <p> from $25 </p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            {{end}} {{end}}
+                        </div>
                     </div>
-                      <!-- <a class="btn btn-default" href="/buy">Tickets</a> -->
-                  </div>
-              </div>
+                </div>
+
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
-          </div>
         </div>
-      </div>
+
+    </div>
+
+</div>
+</div>
+</div>
 {{end}}
 
 
+<div class="container centered_div">
+    <div class="heading text-center">
+        <h2>Go deep and get real with our stellar line up!</h2>
+        <div class="row pre_event">
+            <div class="col-sm-2 col-sm-offset-1"><i class="fas fa-hands-helping fa-3x"></i><br>Integrate the connection between the universe and you</div>
+            <div class="col-sm-2"><i class="fas fa-spa fa-3x"></i><br>Discover how science is catching up with spirituality</div>
+            <div class="col-sm-2"><i class="fas fa-users fa-3x"></i><br>Build community on a global level</div>
+            <div class="col-sm-2"><i class="fas fa-moon fa-3x"></i><br>Learn where longevity secrets and science converge</div>
+            <div class="col-sm-2"><i class="fas fa-globe-americas fa-3x"></i><br>Find out how you can heal our world by healing yourself</div>
+        </div>
+    </div>
+</div>
 
-<div class="container events_container">
-        <div class="row speaker_block">
-                <div class="heading text-center">
-                        <h2>Keynote Speakers</h2>
-                    </div>
-                
 
-                {{ $.Scratch.Set "count" 0 }}
-                {{ range where .Site.Pages "Params.type" "Keynote" }}
-                {{ $.Scratch.Add "count" 1 }}
-                {{ if modBool ($.Scratch.Get "count") 5 }}
-                </div><div class="row">
-                {{end}}
-                     <div class="col-sm-3">
-           
-                   <div class="card" style="background: url('{{ .Site.BaseURL}}{{ .Params.Image }}') no-repeat; background-size:cover;">
-           
-                           <div class="card_title">
-                           <h4>{{ .Title }} <a class="btn" data-toggle="collapse" href="#multiCollapseExample{{ .Params.Id}}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="fas fa-info-circle fa-2x"></i></a></h4> 
-                           
-                           </div>
 
-                           <div class="collapse multi-collapse" id="multiCollapseExample{{ .Params.Id}}">
-                                <div class="card-body">
-                                  <p>{{.Params.About | truncate 160}}</p>
-                                  <p><strong>{{.Params.Name_event}}</strong></p>
-                                  <p>{{.Params.Date_event}} <br> {{.Params.Time_event}}</p>
-                                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#event{{ .Params.Id}}">
+<div class="container events_container centered_div">
+    <div class="row ">
+        <h3>Keynote Speakers Who Will Rock Your Inner And Outer World</h3>
+
+
+        {{ $.Scratch.Set "count" 0 }} {{ range where .Site.Pages "Params.type" "Keynote" }} {{ $.Scratch.Add "count" 1 }} {{ if modBool ($.Scratch.Get "count") 5 }}
+    </div>
+    <div class="row">
+        {{end}}
+        <div class="col-sm-3">
+
+            <div class="card" style="background: url('{{ .Site.BaseURL}}{{ .Params.Image }}') no-repeat; background-size:cover;">
+
+                <div class="card_title">
+                    <h4>{{ .Title }} <a class="btn" data-toggle="collapse" href="#multiCollapseExample{{ .Params.Id}}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="fas fa-info-circle fa-2x"></i></a></h4>
+
+                </div>
+
+                <div class="collapse multi-collapse" id="multiCollapseExample{{ .Params.Id}}">
+                    <div class="card-body">
+                        <p>{{.Params.About | truncate 160}}</p>
+                        <p><strong>{{.Params.Name_event}}</strong></p>
+                        <p>{{.Params.Date_event}} <br> {{.Params.Time_event}}</p>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#event{{ .Params.Id}}">
                                         <h6>More Info &amp; Tickets</h6>
                                   </button>
-                                </div>
-                              </div>
-                   </div>  
-                     </div>
-                {{ end }}
-               </div>
-              
-           
-        <div class="row speaker_block">
-                <div class="heading text-center">
-                        <h2>Panel Discussions</h2>
                     </div>
-                
-
-                {{ $.Scratch.Set "count_p" 0 }}
-                {{ range where .Site.Pages "Params.type" "Panel" }}
-                {{ $.Scratch.Add "count_p" 1 }}
-                {{ if modBool ($.Scratch.Get "count_p") 5 }}
-                </div><div class="row">
-                {{end}}
-                     <div class="col-sm-3">
-           
-                   <div class="card" style="background: url('{{ .Site.BaseURL}}{{ .Params.Image }}') no-repeat; background-size:cover;">
-           
-                           <div class="card_title">
-                           <h4>{{ .Title }} <a class="btn" data-toggle="collapse" href="#multiCollapseExample{{ .Params.Id}}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="fas fa-info-circle fa-2x"></i></a></h4> 
-                           
-                           </div>
-
-                           <div class="collapse multi-collapse" id="multiCollapseExample{{ .Params.Id}}">
-                                <div class="card-body">
-                                  <p>{{.Params.About | truncate 160}}</p>
-                                  <p><strong>{{.Params.Name_event}}</strong></p>
-                                  <p>{{.Params.Date_event}} <br> {{.Params.Time_event}}</p>
-                                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal{{ .Params.Id}}">
-                                        More Info
-                                  </button>
-                                  <p> Ticket needed: Individual Speaker/Premium Pass<br><a class="btn btn-default"  href="/buy">Tickets</a></p>
-                                </div>
-                              </div>
-                   </div>  
-                     </div>
-                {{ end }}
-               </div>
-           
-               <div class="row speaker_block">
-                    <div class="heading text-center">
-                            <h2>Workshops</h2>
-                        </div>
-                    
-    
-                    {{ $.Scratch.Set "count__w" 0 }}
-                    {{ range where .Site.Pages "Params.type" "Workshop" }}
-                    {{ $.Scratch.Add "count_w" 1 }}
-                    {{ if modBool ($.Scratch.Get "count_w") 5 }}
-                    </div><div class="row">
-                    {{end}}
-                         <div class="col-sm-3">
-               
-                       <div class="card" style="background: url('{{ .Site.BaseURL}}{{ .Params.Image }}') no-repeat; background-size:cover;">
-               
-                               <div class="card_title">
-                               <h4>{{ .Title }} <a class="btn" data-toggle="collapse" href="#multiCollapseExample{{ .Params.Id}}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="fas fa-info-circle fa-2x"></i></a></h4> 
-                               
-                               </div>
-    
-                               <div class="collapse multi-collapse" id="multiCollapseExample{{ .Params.Id}}">
-                                    <div class="card-body">
-                                      <p>{{.Params.About | truncate 160}}</p>
-                                      <p><strong>{{.Params.Name_event}}</strong></p>
-                                      <p>{{.Params.Date_event}} <br> {{.Params.Time_event}}</p>
-                                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal{{ .Params.Id}}">
-                                            More Info
-                                      </button>
-                                      <p> Ticket needed: Individual Speaker/Premium Pass<br><a class="btn btn-default"  href="/buy">Tickets</a></p>
-                                    </div>
-                                  </div>
-                       </div>  
-                         </div>
-                    {{ end }}
-                   </div>
-
+                </div>
             </div>
+        </div>
+        {{ end }}
+    </div>
+
+    <div class="row ">
+        <h3>Join engaging experts in thought provoking Panel Discussions!</h3>
+
+        {{ $.Scratch.Set "count" 0 }} 
+        {{ range where .Site.Pages "Params.type" "Panel" }} 
+        {{ $.Scratch.Add "count" 1 }} 
+        {{ if modBool ($.Scratch.Get "count") 5 }}
+    </div>
+    <div class="row">
+        {{end}}
+        <div class="col-sm-3">
+
+            <div class="card" style="background: url('{{ .Site.BaseURL}}{{ .Params.Image }}') no-repeat; background-size:cover;">
+
+                <div class="card_title">
+                    <h4>{{ .Title }} <a class="btn" data-toggle="collapse" href="#multiCollapseExample{{ .Params.Id}}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="fas fa-info-circle fa-2x"></i></a></h4>
+
+                </div>
+
+                <div class="collapse multi-collapse" id="multiCollapseExample{{ .Params.Id}}">
+                    <div class="card-body">
+                        <p>{{.Params.About | truncate 160}}</p>
+                        <p><strong>{{.Params.Name_event}}</strong></p>
+                        <p>{{.Params.Date_event}} <br> {{.Params.Time_event}}</p>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#event{{ .Params.Id}}">
+                                          <h6>More Info &amp; Tickets</h6>
+                                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+
+    <div class="row ">
+        <h3>Deeply Inspiring Workshops</h3>
+
+        {{ $.Scratch.Set "count" 0 }} 
+        {{ range where .Site.Pages "Params.type" "Workshop" }} 
+        {{ $.Scratch.Add "count" 1 }} 
+        {{ if modBool ($.Scratch.Get "count") 5 }}
+    </div>
+    <div class="row">
+        {{end}}
+        <div class="col-sm-3">
+
+            <div class="card" style="background: url('{{ .Site.BaseURL}}{{ .Params.Image }}') no-repeat; background-size:cover;">
+
+                <div class="card_title">
+                    <h4>{{ .Title }} <a class="btn" data-toggle="collapse" href="#multiCollapseExample{{ .Params.Id}}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="fas fa-info-circle fa-2x"></i></a></h4>
+
+                </div>
+
+                <div class="collapse multi-collapse" id="multiCollapseExample{{ .Params.Id}}">
+                    <div class="card-body">
+                        <p>{{.Params.About | truncate 160}}</p>
+                        <p><strong>{{.Params.Name_event}}</strong></p>
+                        <p>{{.Params.Date_event}} <br> {{.Params.Time_event}}</p>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#event{{ .Params.Id}}">
+                                          <h6>More Info &amp; Tickets</h6>
+                                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+
+</div>
 
 {{end}}

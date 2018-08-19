@@ -1,5 +1,5 @@
 ---
-id: "vg"
+id: "vg_w"
 title: "Vickie Gay"
 image: "img/vickie_gay.jpg"
 type: "Workshop"
@@ -7,7 +7,7 @@ about: "CERTIFICATES & AWARDS: 6th National & International election/vote United
 name_event: "Supernatural: Psychic, Mediumship, Psychometry, Empath"
 date_event: "Saturday, February 10 2019"
 time_event: "6:00 pm - 7:30pm PST"
-summary_event: ""
 about_event: "Work on an infrastructure using psychic, mediumship, healing energy, psychometry, empathic powers and the Akashic Records.  Work on how to set an intention with authority through the power of almighty divinity. Work with supernatural beings, learn how to send out prayers that are heard and get results.   Enjoy a guided meditation with a history of 90% of the participants making a connection themselves. Short readings to demonstrate the result of combining powers, and an unforgettable experience being in the presents of almighty beings assisting Vickie Gay. Sharpen your gifted skills, learn new techniques, and/or discover your spiritual powers. Everyone is invited."
+tags: ['workshop', 'prem', 'prem_plus_dw']
 draft: false
 ---

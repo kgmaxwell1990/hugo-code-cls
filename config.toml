@@ -1,5 +1,5 @@
-baseurl = "/"
-title = "Universal"
+baseurl = "https://kgmaxwell1990.github.io/test-cls-template/"
+title = "Conscious Life Expo - live streaming"
 theme = "hugo-universal-theme"
 languageCode = "en-us"
 defaultContentLanguage = "en"
