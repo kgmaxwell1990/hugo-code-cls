@@ -1,4 +1,4 @@
-baseurl = "https://kgmaxwell1990.github.io/test-cls-template/"
+baseurl = "/"
 title = "Universal"
 theme = "hugo-universal-theme"
 languageCode = "en-us"
