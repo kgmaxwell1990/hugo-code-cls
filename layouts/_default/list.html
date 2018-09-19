@@ -1,4 +1,6 @@
-{{ define "main" }} {{ range .Site.Pages}}
+{{ define "main" }} 
+
+{{ range .Site.Pages}}
 <!-- Modal -->
 <div class="modal fade" id="event{{.Params.Id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -37,7 +39,8 @@
                     <div class="col-sm-10 border-left">
                         To view {{.Params.Title}} you need one of the following tickets:<br>
                         <div class="row">
-                            {{ range .Params.tags}} {{ if eq . "ind_key"}}
+                            {{ range .Params.tags}} 
+                            {{ if eq . "ind_key"}}
                             <div class="col-sm-3">
                                 <div class="ticket_small">
                                     <a href="https://ey283.infusionsoft.com/app/storeFront/showCategoryPage?categoryId=455" target="_blank">
@@ -127,7 +130,10 @@
         <h3>Keynote Speakers Who Will Rock Your Inner And Outer World</h3>
 
 
-        {{ $.Scratch.Set "count" 0 }} {{ range where .Site.Pages "Params.type" "Keynote" }} {{ $.Scratch.Add "count" 1 }} {{ if modBool ($.Scratch.Get "count") 5 }}
+        {{ $.Scratch.Set "count" 0 }} 
+        {{ range where .Site.Pages "Params.type" "Keynote" }} 
+        {{ $.Scratch.Add "count" 1 }} 
+        {{ if modBool ($.Scratch.Get "count") 5 }}
     </div>
     <div class="row">
         {{end}}
@@ -135,10 +141,6 @@
 
             <div class="card" style="background: url('{{ .Site.BaseURL}}{{ .Params.Image }}') no-repeat; background-size:cover;">
 
-                <div class="card_title">
-                    <h4>{{ .Title }} <a class="btn" data-toggle="collapse" href="#multiCollapseExample{{ .Params.Id}}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="fas fa-info-circle fa-2x"></i></a></h4>
-
-                </div>
 
                 <div class="collapse multi-collapse" id="multiCollapseExample{{ .Params.Id}}">
                     <div class="card-body">
@@ -150,6 +152,11 @@
                                   </button>
                     </div>
                 </div>
+
+
+            </div>
+            <div class="card_title">
+                <h4>{{ .Title }} <a class="btn" data-toggle="collapse" href="#multiCollapseExample{{ .Params.Id}}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="fas fa-info-circle fa-2x"></i></a></h4>
             </div>
         </div>
         {{ end }}
