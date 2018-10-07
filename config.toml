@@ -49,8 +49,8 @@ defaultContentLanguage = "en"
 
 [[menu.main]]
     name = "FAQs"
-    identifier = "faq"
-    url  = "/faq/"
+    identifier = "faqs"
+    url  = "/faqs/"
     weight = 9
 
 

@@ -1,10 +1,41 @@
 {{ define "main" }}
-<div class="container centered_div">
+<div class="container header">
         <div class="heading text-center">
             <h2>View all live streamed events as video on demand</h2>
         </div>
-        <p class="lead text-center">Opening Ceremony and Keynote with Barbara Marx Hubbard Streaming <a href="">FREE</a></p>
+        <p class="lead text-center"><a data-toggle="modal" data-target="#ocModal">Opening Ceremony</a> and Keynote with Barbara Marx Hubbard Streaming FREE</p>
 </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="ocModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content text_center" >
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Opening Ceremony</h3>
+        </div>
+        <div class="modal-body">
+            <img src="{{ .Site.BaseURL}}/img/barbara_marx_hubbard.jpg"/>
+          <h4> Awaken! </h4>
+          <p>
+            Opening Ceremony Keynote Address with Barbara Marx Hubbard<br>
+            Initiation into becoming a New Human Homo Universalis <br>
+            Crystal Bowls Immersion by Jeralyn Glass</p>
+            
+        <h5>All you need to do is <a href="{{ .Site.BaseURL}}/register">Register</a> @ **5:00pm Feb 9th PST**</h5>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
 
 
 
@@ -18,7 +49,7 @@
                         </div>
                         <div class="row">
                             {{ range sort (.Site.Data.tickets ) "weight" "asc"}}
-                            <div class="col-sm-4">
+                            <div class="col-sm-6 col-md-4">
                             <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                                     <a href="{{ .url }}" target="_blank">
                                     <div class="flipper">
@@ -27,7 +58,7 @@
                                             <h4>{{ .price | markdownify }}</h4>
                                       </div>
                                       <div class="back">
-                                            <p>{{ .text | markdownify }} </p>
+                                            <p><strong>{{ .text | markdownify }} </strong></p>
                                             <p>{{ .info |markdownify}}</p>
                                       </div>
                                     </div>
@@ -35,8 +66,27 @@
                                   </div>
                             
                             </div>
+
+
                        
-                            {{ end }}
+                            {{ end }}                            
+                            <div class="col-sm-6 col-md-4">
+                                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                            <a data-toggle="modal" data-target="#ocModal">
+                                            <div class="flipper">
+                                              <div class="front">
+                                                    <h4>Opening Ceremony</h4><br>
+                                                    <h4>Free</h4>
+                                              </div>
+                                              <div class="back">
+                                                    <p><strong>Opening Ceremony</strong></p>
+                                                    <p>Free opening Ceremony with Barbara Marx Hubbard</p>
+                                              </div>
+                                            </div>
+                                        </a>
+                                          </div>
+                                    
+                            </div>
                         </div>
                     </div>
                 </div>

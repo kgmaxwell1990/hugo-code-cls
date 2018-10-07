@@ -1,7 +1,7 @@
 +++
-title = "FAQ"
+title = "FAQs"
 description = "Frequently asked questions"
 type = "page"
-layout = "faq"
+layout = "faqs"
 +++
 
